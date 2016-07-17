@@ -15,5 +15,8 @@ https://software.intel.com/en-us/creating-an-application-to-communicate-using-we
 A video of my final, completed system is here:
 http://bit.ly/ControlLEDsWithApp
 
+===================================
+Also, in spite of what Github says, only the iOS mobile app is in Swift. But the webserver and web client were written in JavaScript, specifically Node.js, Express.js, and of course, Socket.io . And yes, there were some challenges with mixing JavaScript and Swift within the same system. Ask me about it if you'd like to interview me for a job. :)
+
 
 
