@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IoTClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7F4-cS-tNk">
+                                <rect key="frame" x="82" y="28" width="211" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jMB-cs-y1R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Connect"/>
+                                <connections>
+                                    <action selector="handleConnectionToServer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Yn-FJ-Rga"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPW-yY-k8a">
+                                <rect key="frame" x="58" y="291" width="258" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="i3S-vE-3gC"/>
+                                    <constraint firstAttribute="width" constant="260" id="zaS-oV-4yK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Toggle RED LED">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleRedLED:" destination="BYZ-38-t0r" eventType="touchUpInside" id="etu-Sk-fda"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQH-3u-ha7">
+                                <rect key="frame" x="58" y="196" width="258" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="KRF-ct-d1F"/>
+                                    <constraint firstAttribute="width" constant="260" id="Sm1-ru-0wP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Toggle GREEN LED">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleLED:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GVI-Oc-xfL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Not Connected to Server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nv3-cX-gQ9">
+                                <rect key="frame" x="58" y="106" width="258" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="258" id="f9D-8R-rTv"/>
+                                    <constraint firstAttribute="height" constant="47" id="u83-Sa-3Z9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1o-PU-VS4">
+                                <rect key="frame" x="58" y="392" width="258" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Dhn-ot-HGg"/>
+                                    <constraint firstAttribute="width" constant="260" id="hZj-rq-LaJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Toggle BLUE LED">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleBlueLED:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lYI-nT-zqL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nv3-cX-gQ9" firstAttribute="top" secondItem="7F4-cS-tNk" secondAttribute="bottom" constant="29" id="EC8-hH-LcT"/>
+                            <constraint firstItem="u1o-PU-VS4" firstAttribute="top" secondItem="FPW-yY-k8a" secondAttribute="bottom" constant="30" id="UBc-pn-ikZ"/>
+                            <constraint firstItem="FPW-yY-k8a" firstAttribute="top" secondItem="qQH-3u-ha7" secondAttribute="bottom" constant="30" id="cpB-te-dug"/>
+                            <constraint firstItem="7F4-cS-tNk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="pei-v0-0Cc"/>
+                            <constraint firstItem="qQH-3u-ha7" firstAttribute="top" secondItem="Nv3-cX-gQ9" secondAttribute="bottom" constant="43" id="vkq-7k-aud"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="connectionButton" destination="7F4-cS-tNk" id="aQ9-mY-Tyh"/>
+                        <outlet property="connectionToServerLabel" destination="Nv3-cX-gQ9" id="dbq-Kf-k3b"/>
+                        <outlet property="toggleBlueLedButton" destination="u1o-PU-VS4" id="2Dv-Hg-gW8"/>
+                        <outlet property="toggleLEDButton" destination="qQH-3u-ha7" id="1ef-nj-Mu7"/>
+                        <outlet property="toggleRedLedButton" destination="FPW-yY-k8a" id="QWN-g3-h61"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334.5" y="429.5"/>
+        </scene>
+    </scenes>
+</document>
