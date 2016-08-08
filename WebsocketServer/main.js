@@ -28,20 +28,20 @@ var mraa = require('mraa'); //require mraa
 console.log('MRAA Version: ' + mraa.getVersion()); //write the mraa version to the Intel XDK console
 
 //var myOnboardLed = new mraa.Gpio(13); //LED hooked up to digital pin 13 (or built in pin on Intel Galileo Gen2 as well as Intel Edison)
-var myOnboardLed1 = new mraa.Gpio(5); 
-myOnboardLed1.dir(mraa.DIR_OUT); //set the gpio direction to output
+var GreenLED = new mraa.Gpio(5); 
+GreenLED.dir(mraa.DIR_OUT); //set the gpio direction to output
 
-var myOnboardLed2 = new mraa.Gpio(6); 
-myOnboardLed2.dir(mraa.DIR_OUT); //set the gpio direction to output
+var RedLED = new mraa.Gpio(6); 
+RedLED.dir(mraa.DIR_OUT); //set the gpio direction to output
 
-var myOnboardLed3 = new mraa.Gpio(7); 
-myOnboardLed3.dir(mraa.DIR_OUT); //set the gpio direction to output
+var BlueLED = new mraa.Gpio(7); 
+BlueLED.dir(mraa.DIR_OUT); //set the gpio direction to output
 
 var ledState = true; //Boolean to hold the state of Led
 
-var ledState1 = true;
-var ledState2 = true;
-var ledState3 = true;
+var GreenLEDState = true;
+var RedLEDState = true;
+var BlueLEDState = true;
 
 var express = require('express');
 var app = express();
@@ -106,19 +106,19 @@ io.on('connection', function(socket) {
     socket.on('toggle led', function(msg) {
        // console.log("msg.ledId: " + msg.ledId);
         switch(msg.ledId) {
-            case 1: ledState = ledState1; 
-                ledState1 = !ledState1;     // invert the ledState1 state
-                myOnboardLed1.write(ledState?1:0); //if ledState is true then write a '1' (high) otherwise write a '0' (low)
+            case 1: ledState = GreenLEDState; 
+                GreenLEDState = !GreenLEDState;     // invert the GreenLEDState state
+                GreenLED.write(ledState?1:0); //if ledState is true then write a '1' (high) otherwise write a '0' (low)
                 break;
                 
-            case 2: ledState = ledState2; 
-                ledState2 = !ledState2;     // invert the ledState2 state 
-                myOnboardLed2.write(ledState?1:0); //if ledState is true then write a '1' (high) otherwise write a '0' (low)
+            case 2: ledState = RedLEDState; 
+                RedLEDState = !RedLEDState;         // invert the RedLEDState state 
+                RedLED.write(ledState?1:0); //if ledState is true then write a '1' (high) otherwise write a '0' (low)
                 break;
                 
-            case 3: ledState = ledState3; 
-                ledState3 = !ledState3;     // invert the ledState3 state
-                myOnboardLed3.write(ledState?1:0); //if ledState is true then write a '1' (high) otherwise write a '0' (low)
+            case 3: ledState = BlueLEDState; 
+                BlueLEDState = !BlueLEDState;       // invert the BlueLEDState state
+                BlueLED.write(ledState?1:0); //if ledState is true then write a '1' (high) otherwise write a '0' (low)
                 break;
         }
         msg.value = ledState;

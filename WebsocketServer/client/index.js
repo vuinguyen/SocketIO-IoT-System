@@ -41,9 +41,12 @@ socket.on('toggle led', function(msg) {
     }
 });
 
+/*
+// Comment this out as we don't need chat capability for now
 socket.on('chat message', function(msg) {
     $('#messages').prepend($('<li>'+msg.value+'<span> - '+msg.userId+'</span></li>'));
 });
+*/
 
 socket.on('connected users', function(msg) {
     $('#user-container').html("");
