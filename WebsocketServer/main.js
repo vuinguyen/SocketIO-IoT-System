@@ -79,21 +79,27 @@ io.on('connection', function(socket) {
     console.log('User(s) Connected: ' + connectedUsersArray);
     io.emit('connected users', connectedUsersArray);
     
-    // Note: In order for the original webserver application worked, the client 
+    // Note: In order for the original webserver application to work, the client 
     // really needed to send a 'user disconnect' message first before it can send
-    // a disconnect message. Before, the client tried to send only a 'user disconnect' 
-    // message but there was 'disconnect' message, and so the client (web or mobile) never //  really disconnected. I fixed that problem with my implementation.
+    // a disconnect message. And the server needed to listen for a 'disconnect' message.
+    // Before, the server was not listening for a 'disconnect' message, so there was no
+    // way for the server to keep track of which clients had disconnected.
+    // Everytime we refreshed the client webpage, for example,
+    // the server thought another client had connected. By rewriting the server's
+    // 'user disconnect' function and adding a 'disconnect' function for the server,
+    // I was able to fix that problem.
     
+    // I modified this function
     socket.on('user disconnect', function(msg) {
         lastUserId = msg;
         io.emit('user disconnect', msg);
     });
     
+    // I had to add this function
     socket.on('disconnect', function(msg) { 
         if (msg) {lastUserId = msg;}
         console.log('remove: ' + lastUserId);
         connectedUsersArray.splice(connectedUsersArray.lastIndexOf(lastUserId), 1);
-        //io.emit('user disconnect', lastUserId);
         lastUserId = "";
     });
     
