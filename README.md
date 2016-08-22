@@ -17,7 +17,9 @@ http://bit.ly/ControlLEDsWithApp
 
 Blog posts about my system are here:
 http://media.bemyapp.com/control-led-lights-mobile-app/
+
 http://media.bemyapp.com/control-led-lights-website/
+
 http://media.bemyapp.com/control-led-lights/
 
 ===================================
