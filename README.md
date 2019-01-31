@@ -16,11 +16,11 @@ A video of my final, completed system is here:
 http://bit.ly/ControlLEDsWithApp
 
 Blog posts about my system are here:
-http://media.bemyapp.com/control-led-lights-mobile-app/
+https://sunfishempire.wordpress.com/copyofcontrollingledlights-formaziel/
 
-http://media.bemyapp.com/control-led-lights-website/
+https://sunfishempire.wordpress.com/copyofcontrollingledlightswithwebsite-formaziel/
 
-http://media.bemyapp.com/control-led-lights/
+https://sunfishempire.wordpress.com/copy-of-controlling-led-lights-with-mobile-app-for-maziel/
 
 ===================================
 Also, in spite of what Github says, only the iOS mobile app is in Swift. But the webserver and web client were written in JavaScript, specifically Node.js, Express.js, and of course, Socket.io . And yes, there were some challenges with mixing JavaScript and Swift within the same system. Ask me about it when you interview me for a job. :)
